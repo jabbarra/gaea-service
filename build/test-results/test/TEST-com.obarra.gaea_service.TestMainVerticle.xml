@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.obarra.gaea_service.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-10T01:53:13" hostname="DESKTOP-GN27SBT" time="1.201">
-  <properties/>
-  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="com.obarra.gaea_service.TestMainVerticle" time="1.201"/>
-  <system-out><![CDATA[dsdsdsxxxxxxxxxxxxxxxxxxxxx
-HTTP server started on port 8888
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
