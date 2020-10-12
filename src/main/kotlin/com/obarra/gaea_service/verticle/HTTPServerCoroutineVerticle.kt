@@ -33,16 +33,8 @@ class HTTPServerCoroutineVerticle : CoroutineVerticle() {
   }
 
   suspend fun getPolicyById(context: RoutingContext) {
+    val policyId = context.request().getParam("id").toLong()
     context.response().end(json {
-      obj("id" to 12, "name" to "policy").encode()
-    })
-  }
-
-
-  private val handlerPolicyById = Handler<RoutingContext> { ctx ->
-    val policyId = ctx.request().getParam("id").toLong()
-    ctx.response()
-    ctx.response().end(json {
       obj("id" to policyId, "name" to "policy").encode()
     })
   }
