@@ -35,21 +35,21 @@ class HTTPServerVerticle : AbstractVerticle() {
     this.get("/policies/:id").handler(handlerPolicyById)
   }
 
-  private val handlerRoot = Handler<RoutingContext> { routingContext ->
-    routingContext.response()
+  private val handlerRoot = Handler<RoutingContext> { ctx ->
+    ctx.response()
       .putHeader("content-type", "text/plain")
       .end("Hello from Vert.x!")
   }
 
-  private val handlerPolicies = Handler<RoutingContext> { routingContext ->
-    routingContext.response()
+  private val handlerPolicies = Handler<RoutingContext> { ctx ->
+    ctx.response()
       .putHeader("Content-Type", "application/json; charset=utf-8")
       .end(Json.encodePrettily(policies))
   }
 
-  private val handlerPolicyById = Handler<RoutingContext> { routingContext ->
-    val policyId = routingContext.request().getParam("id").toLong()
-    routingContext.response()
+  private val handlerPolicyById = Handler<RoutingContext> { ctx ->
+    val policyId = ctx.request().getParam("id").toLong()
+    ctx.response()
       .endWithJson(policies.find { it.id == policyId }!!)
   }
 
