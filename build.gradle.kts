@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.*
   import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  kotlin ("jvm") version "1.3.72"
+  kotlin ("jvm") version "1.4.0"
   application
   id("com.github.johnrengelman.shadow") version "5.2.0"
 }
@@ -16,7 +16,7 @@ repositories {
   jcenter()
 }
 
-val kotlinVersion = "1.3.72"
+val kotlinVersion = "1.4.0"
 val vertxVersion = "3.9.3"
 val junitJupiterVersion = "5.6.0"
 
@@ -30,10 +30,8 @@ application {
 }
 
 dependencies {
-  implementation("io.vertx:vertx-config:$vertxVersion")
   implementation("io.vertx:vertx-web:$vertxVersion")
-  implementation("io.vertx:vertx-circuit-breaker:$vertxVersion")
-  implementation("io.vertx:vertx-service-discovery:$vertxVersion")
+  implementation("io.vertx:vertx-web-api-contract:$vertxVersion")
   implementation("io.vertx:vertx-lang-kotlin-coroutines:$vertxVersion")
   implementation("io.vertx:vertx-lang-kotlin:$vertxVersion")
   implementation(kotlin("stdlib-jdk8"))
