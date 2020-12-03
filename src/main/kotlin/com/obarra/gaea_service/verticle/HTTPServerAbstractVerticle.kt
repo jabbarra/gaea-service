@@ -9,8 +9,8 @@ import io.vertx.core.logging.LoggerFactory
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
 
-class HTTPServerVerticle : AbstractVerticle() {
-  private val logger = LoggerFactory.getLogger(HTTPServerVerticle::class.java)
+class HTTPServerAbstractVerticle : AbstractVerticle() {
+  private val logger = LoggerFactory.getLogger(HTTPServerAbstractVerticle::class.java)
 
   override fun start(startPromise: Promise<Void>) {
     logSplash()

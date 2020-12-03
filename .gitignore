@@ -183,3 +183,37 @@ nbdist/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+
+### Application ###
+
+.vertx
+.localstack
+
+### Intellij ###
+
+.idea
+*.iml
+.idea_modules
+
+### MacOS ###
+
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+### Gradle ###
+
+.gradle
+/buildTool/
+build
+
+### VisualStudioCode ###
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+

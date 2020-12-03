@@ -1,6 +1,6 @@
 package com.obarra.gaea_service
 
-import com.obarra.gaea_service.verticle.HTTPServerVerticle
+import com.obarra.gaea_service.verticle.HTTPServerAbstractVerticle
 import io.vertx.core.Vertx
 import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
@@ -13,7 +13,7 @@ class TestMainVerticle {
 
   @BeforeEach
   fun deploy_verticle(vertx: Vertx, testContext: VertxTestContext) {
-    vertx.deployVerticle(HTTPServerVerticle(), testContext.succeeding<String> { _ -> testContext.completeNow() })
+    vertx.deployVerticle(HTTPServerAbstractVerticle(), testContext.succeeding<String> { _ -> testContext.completeNow() })
   }
 
   @Test

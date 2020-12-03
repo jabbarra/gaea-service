@@ -1,6 +1,6 @@
 package com.obarra.gaea_service
 
-import com.obarra.gaea_service.verticle.HTTPServerVerticle
+import com.obarra.gaea_service.verticle.HTTPServerAbstractVerticle
 import io.vertx.core.Verticle
 import io.vertx.core.spi.VerticleFactory
 
@@ -11,7 +11,7 @@ object VerticleComponent : VerticleFactory {
   override fun createVerticle(verticleName: String, classLoader: ClassLoader): Verticle {
     println("xxxxxxxxxxxxxxxxxxxxxx")
     val clazz = Class.forName(verticleName.substringAfter("${prefix()}:")).kotlin
-    return HTTPServerVerticle()
+    return HTTPServerAbstractVerticle()
   }
 
 }
